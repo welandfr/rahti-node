@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         res.json({msg: 'Test-route works with POST',
-        reqBody: req.body })
+        postdata: req.body })
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
