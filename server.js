@@ -1,0 +1,24 @@
+const express = require('express')
+const app = express()
+require('dotenv').config()
+const PORT = process.env.PORT || 3000
+
+console.log(`Node.js ${process.version} dotenv: ${process.env.ENV_VAR}`)
+
+app.use(express.json())
+
+app.get('/', (req, res) => {
+    res.json({ msg: "It works."})
+})
+
+const testRouter = require('./routes/testRoute')
+app.use('/test-route', testRouter)
+
+app.listen(PORT, () => {
+    try {
+        console.log(`Running on port ${PORT}`)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+    
+})

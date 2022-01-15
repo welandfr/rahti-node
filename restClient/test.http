@@ -1,0 +1,18 @@
+@baseUrl=http://127.0.0.1:3000
+
+### Basic GET to /
+
+GET {{baseUrl}}
+
+### GET to /test-route
+
+GET {{baseUrl}}/test-route/
+
+### POST to /test-route
+
+POST {{baseUrl}}/test-route/
+Content-Type: application/json
+
+{ "testkey": "test value" }
+
+###
