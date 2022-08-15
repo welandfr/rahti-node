@@ -8,7 +8,7 @@ console.log(`Node.js ${process.version} dotenv: ${process.env.ENV_VAR}`)
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.json({ msg: "It works."})
+    res.json({ msg: "It works.", foo: process.env.ENV_VAR || 'nope' })
 })
 
 const testRouter = require('./routes/testRoute')
